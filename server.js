@@ -14,7 +14,7 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
-app.options("*", cors()); // Handle preflight requests for all routes
+app.options("(.*)", cors()); // Fix: use (.*) instead of * for newer path-to-regexp
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
