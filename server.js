@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 const contactRoute = require("./routes/contactRoutes");
+const connectInfoRoute = require("./routes/connectInfoRoutes");
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.get("/", (req, res) => {
 
 // Routes
 app.use("/api/contacts", contactRoute);
+app.use("/api/connect-info", connectInfoRoute);
 
 // Port setup
 const PORT = process.env.PORT || 3001;
